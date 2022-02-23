@@ -1,5 +1,5 @@
 import Graph from './graph'
-
+// require('dotenv').config();
 class StockApp{
 
     constructor(){
@@ -8,7 +8,7 @@ class StockApp{
         const myChart = new Chart(this.ctx, {
             type: 'line',
             data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                labels: ["Red", 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
                 datasets: [{
                     label: 'Stock Prices over',
                     data: [1,2,1,1,1,1],

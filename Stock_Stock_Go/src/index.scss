@@ -1,0 +1,28 @@
+$main-font: 'Roboto', sans-serif;
+
+a{
+    text-decoration: none;
+}
+img{
+    width: 100px;
+}
+
+.app-name{
+    font-size: 75px;
+    display: flex;
+    justify-content: center;
+    font-family: $main-font;
+}
+
+.instructions{
+    font-family: $main-font;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-me{
+    display: flex;
+    justify-content: space-evenly;
+
+}
