@@ -24,21 +24,17 @@ img {
   justify-content: center;
 }
 
+.start-year-label {
+  color: #3c7ad6;
+  font-family: "Playfair Display", serif;
+}
+
+.end-year-label {
+  font-family: "Playfair Display", serif;
+  color: #8d2d8d;
+}
+
 .about-me {
   display: flex;
   justify-content: space-evenly;
-}
-
-.year-range {
-  width: 200px;
-}
-
-.ticker-search-button {
-  border-radius: 10px;
-  border: 1px solid black;
-  background: aqua;
-}
-
-.ticker-search-button:hover {
-  cursor: pointer;
 }

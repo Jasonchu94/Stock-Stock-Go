@@ -7,6 +7,7 @@ img{
     width: 100px;
 }
 
+//header
 .app-name{
     font-size: 75px;
     display: flex;
@@ -22,20 +23,21 @@ img{
     justify-content: center;
 }
 
+// search options
+.start-year-label{
+    color: rgb(60, 122, 214);
+    font-family: $main-font;
+}
+
+.end-year-label{
+    font-family: $main-font;
+    color: rgb(141, 45, 141)
+}
+
+
+//footer
 .about-me{
     display: flex;
     justify-content: space-evenly;
 
-}
-.year-range{
-    width: 200px;
-}
-.ticker-search-button{
-    border-radius: 10px;
-    border: 1px solid black;
-    background:aqua;
-}
-
-.ticker-search-button:hover{
-    cursor: pointer;
 }
