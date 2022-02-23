@@ -13,11 +13,12 @@ img {
   font-size: 75px;
   display: flex;
   justify-content: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Playfair Display", serif;
+  color: blueviolet;
 }
 
 .instructions {
-  font-family: "Roboto", sans-serif;
+  font-family: "Playfair Display", serif;
   font-size: 20px;
   display: flex;
   justify-content: center;
@@ -26,4 +27,18 @@ img {
 .about-me {
   display: flex;
   justify-content: space-evenly;
+}
+
+.year-range {
+  width: 200px;
+}
+
+.ticker-search-button {
+  border-radius: 10px;
+  border: 1px solid black;
+  background: aqua;
+}
+
+.ticker-search-button:hover {
+  cursor: pointer;
 }

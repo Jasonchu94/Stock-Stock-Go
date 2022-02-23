@@ -1,4 +1,4 @@
-$main-font: 'Roboto', sans-serif;
+$main-font: 'Playfair Display', serif;
 
 a{
     text-decoration: none;
@@ -12,6 +12,7 @@ img{
     display: flex;
     justify-content: center;
     font-family: $main-font;
+    color: blueviolet;
 }
 
 .instructions{
@@ -25,4 +26,16 @@ img{
     display: flex;
     justify-content: space-evenly;
 
+}
+.year-range{
+    width: 200px;
+}
+.ticker-search-button{
+    border-radius: 10px;
+    border: 1px solid black;
+    background:aqua;
+}
+
+.ticker-search-button:hover{
+    cursor: pointer;
 }
