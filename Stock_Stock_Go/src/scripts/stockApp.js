@@ -1,8 +1,8 @@
+const requests = require('requests')
 class StockApp{
 
     constructor(){
         this.ctx = document.getElementById("myChart").getContext('2d');
-        // debugger
         this.ctx.font = '50px Arial'
         this.ctx.fillText("Select a start date and end date",100,300)
         this.ctx.fillText("Enter a 4 letter ticker symbol to generate a graph!", 100, 400)
@@ -19,15 +19,15 @@ class StockApp{
         let input = e.currentTarget.value.toUpperCase();
         if (input.length === 4) {
             e.currentTarget.value = ""
-            
+            console.log(new Date())
             this.canvas = document.getElementById('myChart')
             this.ctx = document.getElementById("myChart").getContext('2d');
 
             fetch(`https://cloud.iexapis.com/stable/stock/${input}/quote?token=pk_b07152883e9d4a61a719dc430195a97b`)
                 .then(response => response.json())
-                .then(data => this.data = data)
                 .then(
                     function(value){
+                        debugger
                         let canvas = document.getElementById("myChart")
                         let ctx = canvas.getContext('2d')
                         let startYear = document.getElementById('start-year').value
@@ -35,10 +35,10 @@ class StockApp{
                         const myChart = new Chart(ctx, {
                             type: 'line',
                             data: {
-                                labels: [startYear, endYear],
+                                labels: [value.latestTime],
                                 datasets: [{
                                     label: `Stock Prices from ${startYear} to ${endYear}`,
-                                    data: [1, 2],
+                                    data: [value.close],
                                     backgroundColor: [
                                         'rgba(255, 99, 132, 0.2)',
                                         'rgba(54, 162, 235, 0.2)',

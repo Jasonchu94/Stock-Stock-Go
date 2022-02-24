@@ -24,6 +24,7 @@
     "dotenv": "^16.0.0",
     "mini-css-extract-plugin": "^2.5.3",
     "regenerator-runtime": "^0.13.9",
+    "requests": "^0.3.0",
     "sass": "^1.49.8",
     "sass-loader": "^12.6.0",
     "webpack": "^5.69.1",
