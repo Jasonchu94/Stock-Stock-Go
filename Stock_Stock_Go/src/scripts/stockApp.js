@@ -1,9 +1,4 @@
-const tesla = require('../stockdata/TSLA.json');
-const apple = require('../stockdata/AAPL.json');
-const amazon = require('../stockdata/AMZN.json');
-const facebook = require('../stockdata/FB.json');
-const netflix = require('../stockdata/NFLX.json')
-const google = require('../stockdata/GOOGL.json')
+
 
 // costco vaccines ford
 class StockApp{
@@ -15,15 +10,69 @@ class StockApp{
         this.ctx.fillText("Enter a 4 letter ticker symbol to generate a graph!", 100, 400)
         this.input = document.getElementById('ticker-search-bar');
         this.input.addEventListener('input', this.addStock.bind(this));
-        this.tesla = tesla.TSLA.chart;
-        this.apple = apple.AAPL.chart;
-        this.amazon = amazon.AMZN.chart;
-        this.facebook = facebook.FB.chart;
-        this.netflix = netflix.NFLX.chart;
-        this.google = google.GOOGL.chart;
+
+        this.stockChoice = document.getElementById('preselected-stocks');
         // debugger
+        this.stockChoice.addEventListener('select', this.graphStock(this.stockChoice.value));
+        // debugger
+        this.daysInput = document.getElementById('days');
+        debugger
+        this.daysInput.addEventListener('input', this.graphStock(this.stockChoice.value, this.daysInput.value));
+
         this.addStock = this.addStock.bind(this);
+        this.graphStock = this.graphStock.bind(this);
+    }
+
+    graphStock(ticker, days){
+        // debugger
+        if(ticker === '') return null
+        if (days === undefined || days > 253) {days = 253}
+        //253 market days in a year
+        let labels = [];
+        let data = [];
+        let i = 0;
+        let stock = require(`../stockdata/${ticker}.json`)[ticker].chart
+        if (days) {stock = stock.slice(253-days)} 
+        stock.forEach(day => {
+            labels.push(day.label)
+            data.push(day.close)
+        })
        
+        const myChart = new Chart(this.ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: `Stock Close Prices for ${ticker} from the last ${days} days`,
+                    data: data,
+                    backgroundColor: [
+                        'rgba(100, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(100, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    },
+
+                }
+            }
+        });
     }
 
     addStock(e) {

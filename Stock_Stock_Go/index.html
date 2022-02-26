@@ -21,6 +21,21 @@
     <div class="instructions">
         Welcome to Stock Stock Go, an App that graphs out stock prices and uses the info to project outcomes up to 5 years in the future!
     </div>
+    <div>
+        Add these specific stocks to the graph:
+        <select id="preselected-stocks" >
+            <option value="" disabled selected>Select a stock</option>
+            <option value="AAPL">Apple</option>
+            <option value="AMZN">Amazon</option>
+            <option value="FB">Facebook(Meta)</option>
+            <option value="GOOGL">Google</option>
+            <option value="NFLX">Netflix</option>
+            <option value="TSLA">Tesla</option>
+        </select>
+        See info for the last: 
+        <input id="days" placeholder="253 days max" value="">
+
+    </div>
     <div class="ticker-search">
         <label class="start-year-label">Start Date:</label>
         <select name="start-year" id="start-year">
