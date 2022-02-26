@@ -1,4 +1,11 @@
-const requests = require('requests')
+const tesla = require('../stockdata/TSLA.json');
+const apple = require('../stockdata/AAPL.json');
+const amazon = require('../stockdata/AMZN.json');
+const facebook = require('../stockdata/FB.json');
+const netflix = require('../stockdata/NFLX.json')
+const google = require('../stockdata/GOOGL.json')
+
+// costco vaccines ford
 class StockApp{
 
     constructor(){
@@ -8,7 +15,13 @@ class StockApp{
         this.ctx.fillText("Enter a 4 letter ticker symbol to generate a graph!", 100, 400)
         this.input = document.getElementById('ticker-search-bar');
         this.input.addEventListener('input', this.addStock.bind(this));
-
+        this.tesla = tesla.TSLA.chart;
+        this.apple = apple.AAPL.chart;
+        this.amazon = amazon.AMZN.chart;
+        this.facebook = facebook.FB.chart;
+        this.netflix = netflix.NFLX.chart;
+        this.google = google.GOOGL.chart;
+        // debugger
         this.addStock = this.addStock.bind(this);
        
     }
