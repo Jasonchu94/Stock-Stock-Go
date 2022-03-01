@@ -9,29 +9,40 @@ class StockApp{
         this.ctx.font = '50px Arial'
         this.ctx.fillText("Select a start date and end date",100,300)
         this.ctx.fillText("Enter a 4 letter ticker symbol to generate a graph!", 100, 400)
-        this.input = document.getElementById('ticker-search-bar');
-        this.input.addEventListener('input', this.addStock.bind(this));
+        // this.input = document.getElementById('ticker-search-bar');
+        // this.input.addEventListener('input', this.addStock.bind(this));
         
-        // this.stockChoice = document.getElementById('preselected-stocks');
-        // debugger
-        // this.stockChoice.addEventListener('change', this.graphStock(this.stockChoice.value));
-        // debugger
-        // this.daysInput = document.getElementById('days');
-        // debugger
-        // this.daysInput.addEventListener('input', this.graphStock(this.stockChoice.value, this.daysInput.value));
-        // this.graphStock("AAPL")
-        this.stockButton = document.getElementById(`stock-button`);
-        this.selectedYears = document.getElementById('preselected-year').value
-        // debugger
+    
+        this.appleButton = document.getElementById(`apple-button`);
+        this.amazonButton = document.getElementById(`amazon-button`);
+        this.costcoButton = document.getElementById(`costco-button`);
+        this.disneyButton = document.getElementById(`disney-button`);
+        this.fordButton = document.getElementById(`ford-button`);
+        this.facebookButton = document.getElementById(`facebook-button`);
+        this.googleButton = document.getElementById(`google-button`);
+        this.netflixButton = document.getElementById(`netflix-button`);
+        this.pfizerButton = document.getElementById(`pfizer-button`);
+        this.teslaButton = document.getElementById(`tesla-button`);
+
         
-        this.stockButton.onclick= function(){this.graphStock(this.stockButton.value)}.bind(this)
-        // debugger
+        this.appleButton.onclick= function(){this.graphStock(this.appleButton.value)}.bind(this)
+        this.amazonButton.onclick = function () { this.graphStock(this.amazonButton.value) }.bind(this)
+        this.costcoButton.onclick = function () { this.graphStock(this.costcoButton.value) }.bind(this)
+        this.disneyButton.onclick = function () { this.graphStock(this.disneyButton.value) }.bind(this)
+        this.fordButton.onclick = function () { this.graphStock(this.fordButton.value) }.bind(this)
+        this.facebookButton.onclick = function () { this.graphStock(this.facebookButton.value) }.bind(this)
+        this.googleButton.onclick = function () { this.graphStock(this.googleButton.value) }.bind(this)
+        this.netflixButton.onclick = function () { this.graphStock(this.netflixButton.value) }.bind(this)
+        this.pfizerButton.onclick = function () { this.graphStock(this.pfizerButton.value) }.bind(this)
+        this.teslaButton.onclick = function () { this.graphStock(this.teslaButton.value) }.bind(this)
+      
         this.addStock = this.addStock.bind(this);
         this.graphStock = this.graphStock.bind(this);
 
     }
 
     graphStock(ticker, days){
+        // debugger
         if(ticker === '') return null
         days = document.getElementById('preselected-year').value
         //253 market days in a year
