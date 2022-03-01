@@ -1,6 +1,7 @@
 
 
 // costco vaccines ford
+const stocks = ['AAPL', 'AMZN', 'COST', 'DIS', "F", "FB", "GOOGL", 'PFE', "TSLA"]
 class StockApp{
 
     constructor(){
@@ -10,23 +11,29 @@ class StockApp{
         this.ctx.fillText("Enter a 4 letter ticker symbol to generate a graph!", 100, 400)
         this.input = document.getElementById('ticker-search-bar');
         this.input.addEventListener('input', this.addStock.bind(this));
-
-        this.stockChoice = document.getElementById('preselected-stocks');
+        
+        // this.stockChoice = document.getElementById('preselected-stocks');
         // debugger
-        this.stockChoice.addEventListener('select', this.graphStock(this.stockChoice.value));
+        // this.stockChoice.addEventListener('change', this.graphStock(this.stockChoice.value));
         // debugger
-        this.daysInput = document.getElementById('days');
-        debugger
-        this.daysInput.addEventListener('input', this.graphStock(this.stockChoice.value, this.daysInput.value));
-
+        // this.daysInput = document.getElementById('days');
+        // debugger
+        // this.daysInput.addEventListener('input', this.graphStock(this.stockChoice.value, this.daysInput.value));
+        // this.graphStock("AAPL")
+        this.stockButton = document.getElementById(`stock-button`);
+        this.selectedYears = document.getElementById('preselected-year').value
+        // debugger
+        
+        this.stockButton.onclick= function(){this.graphStock(this.stockButton.value)}.bind(this)
+        // debugger
         this.addStock = this.addStock.bind(this);
         this.graphStock = this.graphStock.bind(this);
+
     }
 
     graphStock(ticker, days){
-        // debugger
         if(ticker === '') return null
-        if (days === undefined || days > 253) {days = 253}
+        days = document.getElementById('preselected-year').value
         //253 market days in a year
         let labels = [];
         let data = [];
@@ -81,7 +88,7 @@ class StockApp{
         let input = e.currentTarget.value.toUpperCase();
         if (input.length === 4) {
             e.currentTarget.value = ""
-            console.log(new Date())
+            // console.log(new Date())
             this.canvas = document.getElementById('myChart')
             this.ctx = document.getElementById("myChart").getContext('2d');
 
@@ -89,7 +96,7 @@ class StockApp{
                 .then(response => response.json())
                 .then(
                     function(value){
-                        debugger
+                        // debugger
                         let canvas = document.getElementById("myChart")
                         let ctx = canvas.getContext('2d')
                         let startYear = document.getElementById('start-year').value
