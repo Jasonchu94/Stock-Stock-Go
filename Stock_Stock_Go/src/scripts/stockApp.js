@@ -89,7 +89,7 @@ class StockApp{
     //         this.canvas = document.getElementById('myChart')
     //         this.ctx = document.getElementById("myChart").getContext('2d');
 
-    //         fetch(`https://cloud.iexapis.com/stable/stock/${input}/quote?token=pk_b07152883e9d4a61a719dc430195a97b`)
+    //         fetch(`https://cloud.iexapis.com/v1/stock/market/batch?types=chart&symbols=${input}&range=1y&token=pk_b07152883e9d4a61a719dc430195a97b`)
     //             .then(response => response.json())
     //             .then(
     //                 function(value){
