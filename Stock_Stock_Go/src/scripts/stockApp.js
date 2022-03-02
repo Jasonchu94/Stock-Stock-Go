@@ -76,6 +76,7 @@ class StockApp{
                 }
             }
         });
+        
     }
 
     // addStock(e) {
