@@ -1,14 +1,9 @@
-
-
-// costco vaccines ford
-const stocks = ['AAPL', 'AMZN', 'COST', 'DIS', "F", "FB", "GOOGL", 'PFE', "TSLA"]
 class StockApp{
 
     constructor(){
         this.ctx = document.getElementById("myChart").getContext('2d');
-        this.ctx.font = '50px Arial'
-        this.ctx.fillText("Select a start date and end date",100,300)
-        this.ctx.fillText("Enter a 4 letter ticker symbol to generate a graph!", 100, 400)
+        this.ctx.font = '75px Arial'
+        this.ctx.fillText("Click a stock icon and choose a time period!",100,300)
         // this.input = document.getElementById('ticker-search-bar');
         // this.input.addEventListener('input', this.addStock.bind(this));
         
@@ -55,7 +50,7 @@ class StockApp{
             data.push(day.close)
         })
        
-        const myChart = new Chart(this.ctx, {
+        new Chart(this.ctx, {
             type: 'line',
             data: {
                 labels: labels,
