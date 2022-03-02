@@ -3,6 +3,7 @@ class StockApp{
     constructor(){
         this.ctx = document.getElementById("myChart").getContext('2d');
         this.ctx.font = '75px Arial'
+        this.ctx.fillStyle = "#ff1918"
         this.ctx.fillText("Click a stock icon and choose a time period!",100,300)
         // this.input = document.getElementById('ticker-search-bar');
         // this.input.addEventListener('input', this.addStock.bind(this));
@@ -28,7 +29,7 @@ class StockApp{
         this.facebookButton.onclick = function () { this.graphStock(this.facebookButton.value) }.bind(this)
         this.googleButton.onclick = function () { this.graphStock(this.googleButton.value) }.bind(this)
         this.netflixButton.onclick = function () { this.graphStock(this.netflixButton.value) }.bind(this)
-        this.pfizerButton.onclick = function () { this.graphStock(this.pfizerButton.value) }.bind(this)
+        // this.pfizerButton.onclick = function () { this.graphStock(this.pfizerButton.value) }.bind(this)
         this.teslaButton.onclick = function () { this.graphStock(this.teslaButton.value) }.bind(this)
       
         this.graphStock = this.graphStock.bind(this);
@@ -62,7 +63,7 @@ class StockApp{
                      
                     ],
                     borderColor: [
-                        `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, 1)`,
+                        `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, .2)`,
                     ],
                     borderWidth: 1
                 }]
