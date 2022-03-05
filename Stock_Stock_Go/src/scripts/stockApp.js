@@ -3,7 +3,7 @@ class StockApp{
     constructor(){
         this.ctx = document.getElementById("myChart").getContext('2d');
         this.ctx.font = '75px Arial'
-        this.ctx.fillStyle = "#ff1918"
+        this.ctx.fillStyle = "blueviolet"
         this.ctx.fillText("Click a stock icon and choose a time period!",100,300)
         // this.input = document.getElementById('ticker-search-bar');
         // this.input.addEventListener('input', this.addStock.bind(this));
@@ -33,6 +33,11 @@ class StockApp{
         this.teslaButton.onclick = function () { this.graphStock(this.teslaButton.value) }.bind(this)
       
         this.graphStock = this.graphStock.bind(this);
+        this.drawtable=this.drawtable.bind(this);
+
+        // debugger
+        
+        setTimeout(function(){document.getElementById('fadeaway').style.display='none'},2000)
 
     }
 
@@ -43,13 +48,23 @@ class StockApp{
         //253 market days in a year
         let labels = [];
         let data = [];
-        let i = 0;
+        let high = 0;
+        let low = Infinity;
+        let volume = 0;
+        let volumeCount=0;
         let stock = require(`../stockdata/${ticker}.json`)[ticker].chart
-        if (days) {stock = stock.slice(253-days)} 
+        // if (days) {stock = stock.slice(253-days)} 
         stock.forEach(day => {
             labels.push(day.label)
             data.push(day.close)
+            if(day.high > high){high=day.high}
+            if(day.low < low ){low=day.low}
+            volume += day.volume
+            volumeCount+=1
+
         })
+        // debugger
+        this.drawtable(ticker,stock, days, high, low, (volume/volumeCount));
        
         new Chart(this.ctx, {
             type: 'line',
@@ -59,7 +74,7 @@ class StockApp{
                     label: `Stock Close Prices for ${ticker} from the last ${days} days`,
                     data: data,
                     backgroundColor: [
-                        `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, .2)`
+                        `rgba(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)},  ${Math.floor(Math.random() * 256)}, .2)`
                      
                     ],
                     borderColor: [
@@ -76,8 +91,23 @@ class StockApp{
 
                 }
             }
-        });
+            
+        }
+        );
         
+    }
+
+    drawtable(ticker,stock, days, high, low, volume){
+        // debugger
+        document.getElementById("table1").style.display= 'grid'
+        document.getElementById('table-header').innerHTML = `Stock information for ${ticker}`;
+        document.getElementById('table1').rows[0].cells[0].innerHTML = `${days}-Day-High`
+        document.getElementById('table1').rows[0].cells[1].innerHTML = `${days}-Day-Low`
+        document.getElementById('table1').rows[0].cells[2].innerHTML = `Average Daily Volume`
+        // debugger
+        document.getElementById('table1').rows[1].cells[0].innerHTML = `$${high}`
+        document.getElementById('table1').rows[1].cells[1].innerHTML = `$${low}`
+        document.getElementById('table1').rows[1].cells[2].innerHTML = `${volume.toLocaleString()}`
     }
 
     // addStock(e) {

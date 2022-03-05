@@ -1,5 +1,7 @@
 $main-font: 'Playfair Display', serif;
-
+body{
+    background-color: lightskyblue;
+}
 a{
     text-decoration: none;
 }
@@ -8,6 +10,25 @@ img{
 }
 button{
     border: none;
+    background-color: lavender;
+    > img{
+
+        border-radius: 20px;
+    }
+}
+table, tr, td {
+    border: 1px solid black;
+    background-color: lavender;
+}
+table{
+    display: none;
+}
+
+.logo{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    opacity: 1;
 }
 
 .app-name{
@@ -15,14 +36,28 @@ button{
     height: 100%;
     width: 100%;
 }
+
+.instructions{
+    background-color: lavender;
+}
+.year{
+    background-color: lavender;
+}
+#preselected-year{
+    background-color: lavender;
+}
 #myChart{
     width: 100%;
     height: 100%;
+    background-color: lavender;
 }
 
 .stock-choices{
+    font-size: 50px;
+    font-family: $main-font;
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+    background-color: lavender;
 }
 
 //header
@@ -32,6 +67,7 @@ button{
     justify-content: center;
     font-family: $main-font;
     color: blueviolet;
+    
 }
 
 .instructions{
@@ -42,12 +78,35 @@ button{
 }
 
 
+.table-header-container{
+    background-color: lavender;
+}
+#table-header{
+    font-size: 40px;
+    font-weight: bold;
+    background-color: purple;
+    text-align: center;
+    border-radius: 10px;
+    opacity: .8;
+    width: 50%;
+    margin-left: 25vw;
+}
+#table1{
+    border: none;
+    display: flex;
+    justify-content: center;
+}
 
+.table-row-1{
+    font-weight: bold;
+    font-size: 40px;
+}
 
 
 //footer
 .about-me{
     display: flex;
     justify-content: space-evenly;
-
+    background-color: lavender;
 }
+

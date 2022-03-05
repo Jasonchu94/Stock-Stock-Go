@@ -15,6 +15,9 @@
 </head>
 
 <body>
+    <div id="fadeaway">
+        <img class='logo'src="./assets/images/App_logo.png">
+    </div>
     <div class="app-name">
         Stock Stock GO
     </div>
@@ -22,7 +25,7 @@
         Welcome to Stock Stock Go, an App that graphs out stock prices and uses the info to project outcomes up to 5 years in the future!
     </div>
     <div class="stock-choices">
-        Add these specific stocks to the graph:
+        Select a stock:
         <br>
         <button value="AAPL" id="apple-button"><img src="./assets/images/Apple_icon.png"></button>
         <button value="AMZN" id="amazon-button"><img src="./assets//images/Amazon_icon.png"></button>
@@ -37,7 +40,7 @@
         
 
     </div>
-    <div>
+    <div class="year">
         See info for the last:
         <select id="preselected-year">
             <option value="253">253 days</option>
@@ -83,9 +86,22 @@
 
     <!-- </div> --> 
     <canvas id="myChart" width="1600" height="700"></canvas>
-    <div>
-        HELLO YOU
+    <div class="table-header-container">
+        <div id="table-header"></div>
+
     </div>
+    <table id="table1">
+        <tr class="table-row-1">
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
     <div class="about-me">
         <div class="github">
             <a target="_blank" href="https://github.com/Jasonchu94"><img src="./assets/images/Github_icon.png"></a>
