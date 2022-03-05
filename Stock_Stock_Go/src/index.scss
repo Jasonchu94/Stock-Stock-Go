@@ -39,6 +39,16 @@ table{
 
 .instructions{
     background-color: lavender;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    font-size: 40px;
+    font-weight: bold;
+}
+.disclaimer{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: normal;
 }
 .year{
     background-color: lavender;
