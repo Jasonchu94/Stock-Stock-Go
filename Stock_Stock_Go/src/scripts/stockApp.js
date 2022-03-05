@@ -100,6 +100,8 @@ class StockApp{
     drawtable(ticker,stock, days, high, low, volume){
         // debugger
         document.getElementById("table1").style.display= 'grid'
+        // debugger
+        // document.getElementById('table1').children[0].style.display= 'grid'
         document.getElementById('table-header').innerHTML = `Stock information for ${ticker}`;
         document.getElementById('table1').rows[0].cells[0].innerHTML = `${days}-Day-High`
         document.getElementById('table1').rows[0].cells[1].innerHTML = `${days}-Day-Low`
