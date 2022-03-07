@@ -2,7 +2,7 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
 body {
-  background-color: lightskyblue;
+  background-color: aquamarine;
 }
 
 a {
@@ -34,7 +34,7 @@ table {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  opacity: 1;
+  opacity: 0;
 }
 
 .app-name {
@@ -99,6 +99,10 @@ table {
   background-color: lavender;
 }
 
+#table-container {
+  display: none;
+}
+
 #table-header {
   font-size: 40px;
   font-weight: bold;
@@ -119,6 +123,28 @@ table {
 .table-row-1 {
   font-weight: bold;
   font-size: 40px;
+}
+.table-row-1 > td {
+  background-color: white;
+  color: lightblue;
+  border-radius: 4px;
+  border: 2px solid black;
+}
+.table-row-1 > :nth-child(2) {
+  color: blue;
+}
+.table-row-1 > :nth-child(3) {
+  color: red;
+}
+.table-row-1 > :last-child {
+  color: greenyellow;
+}
+
+.table-row-2 {
+  text-align: center;
+}
+.table-row-2 > td {
+  background-color: lightcoral;
 }
 
 .about-me {
