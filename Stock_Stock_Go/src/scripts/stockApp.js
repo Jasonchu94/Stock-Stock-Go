@@ -111,7 +111,7 @@ class StockApp{
         
     }
 
-    drawtable(ticker,stock, days, high, low, volume, currentDay){
+    drawtable(ticker,stock, days, high, low, volume, currentDay, currentDayVolume){
         // debugger
         document.getElementById("table-container").style.display= 'grid'
         // debugger
@@ -120,12 +120,12 @@ class StockApp{
         document.getElementById('table1').rows[0].cells[0].innerHTML = `${days}-Day-High`
         document.getElementById('table1').rows[0].cells[1].innerHTML = `${days}-Day-Low`
         document.getElementById('table1').rows[0].cells[2].innerHTML = `Current Day Price`
-        document.getElementById('table1').rows[0].cells[3].innerHTML = `Average Daily Volume`
+        document.getElementById('table1').rows[0].cells[3].innerHTML = `AD Volume vs CD Volume`
         // debugger
         document.getElementById('table1').rows[1].cells[0].innerHTML = `$${high}`
         document.getElementById('table1').rows[1].cells[1].innerHTML = `$${low}`
         document.getElementById('table1').rows[1].cells[2].innerHTML = `$${currentDay}`
-        document.getElementById('table1').rows[1].cells[3].innerHTML = `${volume.toLocaleString()}`
+        document.getElementById('table1').rows[1].cells[3].innerHTML = `${volume.toLocaleString()} vs ${currentDayVolume.toLocaleString()}`
 
         // debugger
         let takeaways = document.getElementById('take-aways')
@@ -133,9 +133,12 @@ class StockApp{
         let takeaway1 = document.getElementById('takeaway-1');
         let takeaway2 = document.getElementById('takeaway-2');
         let takeaway3 = document.getElementById('takeaway-3');
+        let takeaway4 = document.getElementById('takeaway-4');
 
         takeaway1.innerHTML = `A ${days}-day high/low is an indicator used by traders as an important factor regarding predicting future price movement`
         takeaway2.innerHTML = `Stock traders may buy a stock when the current day price exceeds its ${days}-day high, or sell when the price falls below its ${days}-day low`
+        takeaway3.innerHTML = `Sizable ${days}-day volume increases signify that the stock is attracting more interest`
+        takeaway4.innerHTML = `Decreasing ${days}-day volume signifys`
     }
 
     addStock() {
