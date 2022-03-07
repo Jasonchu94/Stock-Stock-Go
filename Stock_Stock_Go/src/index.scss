@@ -1,6 +1,6 @@
 $main-font: 'Playfair Display', serif;
 body{
-    background-color: aquamarine;
+    background-color: lavender
 }
 a{
     text-decoration: none;
@@ -51,12 +51,30 @@ table{
     font-style: italic;
     font-weight: normal;
 }
+// year search
 .year{
     background-color: lavender;
 }
 #preselected-year{
     background-color: lavender;
 }
+#ticker-search-bar{
+    border-radius: 100px;
+    border: none;
+}
+.ticker-search-button{
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    
+}
+.ticker-search-button:hover{
+        cursor: pointer;
+}
+
+//graph
 #myChart{
     width: 100%;
     height: 100%;
@@ -98,7 +116,7 @@ table{
 #table-header{
     font-size: 40px;
     font-weight: bold;
-    background-color: purple;
+    background-color: rgb(219, 97, 219);
     text-align: center;
     border-radius: 10px;
     opacity: .8;
@@ -138,6 +156,11 @@ table{
         
     }
     
+}
+
+//takeaways
+.take-aways{
+    display: none;
 }
 
 //footer

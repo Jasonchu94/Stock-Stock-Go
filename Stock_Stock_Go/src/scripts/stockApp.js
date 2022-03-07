@@ -53,8 +53,9 @@ class StockApp{
         let volume = 0;
         let currentDay;
         let volumeCount=0;
+        let currentDayVolume;
         let stock;
-        debugger
+        
         if (searchedStock) {stock = searchedStock.chart}
         else{
             stock = require(`../stockdata/${ticker}.json`)[ticker].chart
@@ -69,12 +70,13 @@ class StockApp{
             if(day.high > high){high=day.high}
             if(day.low < low ){low=day.low}
             currentDay = day.close;
+            currentDayVolume = day.volume
             volume += day.volume
             volumeCount+=1
 
         })
         // debugger
-        this.drawtable(ticker,stock, days, high, low, (volume/volumeCount), currentDay);
+        this.drawtable(ticker,stock, days, high, low, (volume/volumeCount), currentDay, currentDayVolume);
        
         new Chart(this.ctx, {
             type: 'line',
@@ -124,26 +126,41 @@ class StockApp{
         document.getElementById('table1').rows[1].cells[1].innerHTML = `$${low}`
         document.getElementById('table1').rows[1].cells[2].innerHTML = `$${currentDay}`
         document.getElementById('table1').rows[1].cells[3].innerHTML = `${volume.toLocaleString()}`
+
+        // debugger
+        let takeaways = document.getElementById('take-aways')
+        takeaways.style.display = 'grid'
+        let takeaway1 = document.getElementById('takeaway-1');
+        let takeaway2 = document.getElementById('takeaway-2');
+        let takeaway3 = document.getElementById('takeaway-3');
+
+        takeaway1.innerHTML = `A ${days}-day high/low is an indicator used by traders as an important factor regarding predicting future price movement`
+        takeaway2.innerHTML = `Stock traders may buy a stock when the current day price exceeds its ${days}-day high, or sell when the price falls below its ${days}-day low`
     }
 
     addStock() {
-        debugger
+        // debugger
+        document.getElementById("table-container").style.display = 'none'
         let input = document.getElementById('ticker-search-bar').value.toUpperCase();
+        document.getElementById('ticker-search-bar').value = ''
+        document.getElementById('table-header').innerHTML = `Stock information for ${input}`
         fetch(`https://cloud.iexapis.com/v1/stock/market/batch?types=chart&symbols=${input}&range=1y&token=pk_b07152883e9d4a61a719dc430195a97b`)
                 .then(response => response.json())
                 .then(
                     function(value){
-                        debugger
+                        // debugger
                         this.graphStock(input, 1, value[input])
 
                     }.bind(this),
                     function(error){
                         // debugger
+                        document.getElementById('take-aways').style.display = 'none'
+                        document.getElementById('table-header').innerHTML = `Stock information for ${input} not found`
                         let canvas = document.getElementById("myChart")
                         let ctx = canvas.getContext('2d')
                         ctx.clearRect(0, 0, canvas.width, canvas.height)
                         ctx.font = '50px Arial'
-                        ctx.fillText("No ticker found for your entry", 400, 300)
+                        ctx.fillText("No ticker found for your entry", 500, 300)
                     }
                 )
                
