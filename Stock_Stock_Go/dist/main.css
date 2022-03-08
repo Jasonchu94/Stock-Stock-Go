@@ -3,6 +3,11 @@
   \*************************************************************************************************************************************/
 body {
   background-color: lavender;
+  font-family: "Playfair Display", serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {
@@ -34,7 +39,7 @@ table {
   width: 100vw;
   height: 100vh;
   position: fixed;
-  opacity: 0;
+  opacity: 1;
 }
 
 .app-name {
@@ -166,9 +171,24 @@ table {
 
 .take-aways {
   display: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.inferences {
+  display: none;
+}
+
+#inferences1 {
+  display: none;
+}
+
+#inferences2 {
+  display: none;
 }
 
 .about-me {
+  margin-top: 10%;
   display: flex;
   justify-content: space-evenly;
   background-color: lavender;

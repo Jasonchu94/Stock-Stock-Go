@@ -1,6 +1,10 @@
 $main-font: 'Playfair Display', serif;
 body{
-    background-color: lavender
+    background-color: lavender;
+    font-family: $main-font;
+}
+html{
+    scroll-behavior: smooth;
 }
 a{
     text-decoration: none;
@@ -29,7 +33,7 @@ table{
     width: 100vw;
     height: 100vh;
     position: fixed;
-    opacity: 0;
+    opacity: 1;
 }
 
 .app-name{
@@ -161,10 +165,23 @@ table{
 //takeaways
 .take-aways{
     display: none;
+    font-weight: bold;
+    font-size: 20px;
 }
 
+//inferences
+.inferences{
+    display: none;
+}
+#inferences1{
+    display: none;
+}
+#inferences2{
+    display: none;
+}
 //footer
 .about-me{
+    margin-top: 10%;
     display: flex;
     justify-content: space-evenly;
     background-color: lavender;

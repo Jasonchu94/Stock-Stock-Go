@@ -138,7 +138,34 @@ class StockApp{
         takeaway1.innerHTML = `A ${days}-day high/low is an indicator used by traders as an important factor regarding predicting future price movement`
         takeaway2.innerHTML = `Stock traders may buy a stock when the current day price exceeds its ${days}-day high, or sell when the price falls below its ${days}-day low`
         takeaway3.innerHTML = `Sizable ${days}-day volume increases signify that the stock is attracting more interest`
-        takeaway4.innerHTML = `Decreasing ${days}-day volume signifys`
+        takeaway4.innerHTML = `Decreasing ${days}-day volume signifys a decrease in interest, although a bounce back in volume may result in a price increase`
+
+        let inferences = document.getElementById('inferences');
+        inferences.style.display='grid';
+        inferences.innerHTML = `Inferences about ${ticker}:`
+
+        let inferences1 = document.getElementById('inferences1')
+        let inferences2 = document.getElementById('inferences2')
+        inferences1.style.display='grid';
+        inferences2.style.display='grid'
+        // debugger
+        
+        if(currentDay < high){
+            inferences1.innerHTML = `The current day price is lower than the ${days}-day high`
+        }else if(currentDay===high){
+            inferences1.innerHTML='Today is the current high'
+        }else{
+            inferences1.innerHTML= `The current day price is higher than the ${days}-day high`
+        }
+
+        if(currentDayVolume > volume){
+            inferences2.innerHTML = `Current daily volume has exceeded the average daily volume`
+        } else if(currentDayVolume === volume){
+            inferences2.innerHTML = 'The volume today relfects the average daily volume'
+        }else{
+            inferences2.innerHTML = 'Current daily volume has dipped below the average daily volume'
+        }
+
     }
 
     addStock() {
@@ -159,6 +186,9 @@ class StockApp{
                         // debugger
                         document.getElementById('take-aways').style.display = 'none'
                         document.getElementById('table-header').innerHTML = `Stock information for ${input} not found`
+                        document.getElementById('inferences').style.display='none'
+                        document.getElementById('inferences1').style.display = 'none'
+                        document.getElementById('inferences2').style.display = 'none'
                         let canvas = document.getElementById("myChart")
                         let ctx = canvas.getContext('2d')
                         ctx.clearRect(0, 0, canvas.width, canvas.height)
