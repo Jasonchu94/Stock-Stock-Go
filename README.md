@@ -40,5 +40,8 @@ fetch(`https://cloud.iexapis.com/v1/stock/market/batch?types=chart&symbols=${inp
                 )
 ```
 
+![Stock Insights]![StockStockGo](https://user-images.githubusercontent.com/88340645/157318879-35301242-755c-4337-8297-c64c36ef216b.png)
+
+
 Future improvments: 
 Add more accessible data rather than just closing prices. Allow for more extensive searches with a higher tier of API call account. 
