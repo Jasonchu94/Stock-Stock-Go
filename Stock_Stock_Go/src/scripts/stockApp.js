@@ -192,8 +192,8 @@ class StockApp{
                         let canvas = document.getElementById("myChart")
                         let ctx = canvas.getContext('2d')
                         ctx.clearRect(0, 0, canvas.width, canvas.height)
-                        ctx.font = '50px Arial'
-                        ctx.fillText("No ticker found for your entry", 500, 300)
+                        ctx.font = 'bold 50px Arial'
+                        ctx.fillText("No ticker found for your entry", 450, 300)
                     }
                 )
                
