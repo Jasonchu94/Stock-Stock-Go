@@ -2,9 +2,9 @@ class StockApp{
 
     constructor(){
         this.ctx = document.getElementById("myChart").getContext('2d');
-        this.ctx.font = '75px Arial'
+        this.ctx.font = '30px Arial'
         this.ctx.fillStyle = "blueviolet"
-        this.ctx.fillText("Click a stock icon and choose a time period!",100,300)
+        this.ctx.fillText("Click a stock icon and choose a time period!",0,200)
      
         this.addStock = this.addStock.bind(this);
         
@@ -36,6 +36,15 @@ class StockApp{
 
         this.searchStock = document.getElementById('ticker-search-button')
         this.searchStock.onclick = function(){this.addStock()}.bind(this)
+
+        this.modalCloseButton=document.getElementById('modal-close-button')
+        this.modalCloseButton.onclick = function(){
+            document.getElementById('instructions-modal').style.display='none'
+        }
+        this.modalOpenButton=document.getElementById('open-instructions')
+        this.modalOpenButton.onclick=function(){
+            document.getElementById('instructions-modal').style.display = 'flex'
+        }
         
         setTimeout(function(){document.getElementById('fadeaway').style.display='none'},2000)
 
@@ -103,7 +112,8 @@ class StockApp{
                     },
 
                 },
-                
+                responsive: false,
+                maintainAspectRatio: true,
             }
             
         }
@@ -192,8 +202,8 @@ class StockApp{
                         let canvas = document.getElementById("myChart")
                         let ctx = canvas.getContext('2d')
                         ctx.clearRect(0, 0, canvas.width, canvas.height)
-                        ctx.font = 'bold 50px Arial'
-                        ctx.fillText("No ticker found for your entry", 450, 300)
+                        ctx.font = 'bold 30px Arial'
+                        ctx.fillText("No ticker found for your entry", 0, 200)
                     }
                 )
                

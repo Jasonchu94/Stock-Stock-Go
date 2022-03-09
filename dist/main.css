@@ -1,3 +1,231 @@
-body{background-color:#e6e6fa;font-family:"Playfair Display",serif}html{scroll-behavior:smooth}a{text-decoration:none}img{width:100px}button{border:none;background-color:#e6e6fa}button>img{border-radius:20px}table,tr,td{border:1px solid #000;background-color:#e6e6fa}table{display:none}.logo{width:100vw;height:100vh;position:fixed;opacity:1}.app-name{background-color:#e6e6fa;height:100%;width:100%}.instructions{background-color:#e6e6fa;display:flex;text-align:center;flex-direction:column;font-size:40px;font-weight:bold}.disclaimer{font-size:20px;font-style:italic;font-weight:normal}.year{background-color:#e6e6fa}#preselected-year{background-color:#e6e6fa}#ticker-search-bar{border-radius:100px;border:none}.ticker-search-button{border-radius:10px;border:1px solid #000;background-color:red;color:#fff;font-weight:bold}.ticker-search-button:hover{cursor:pointer}#myChart{width:100%;height:100%;background-color:#e6e6fa}.stock-choices{font-size:50px;font-family:"Playfair Display",serif;display:flex;justify-content:space-between;background-color:#e6e6fa}.app-name{font-size:75px;display:flex;justify-content:center;font-family:"Playfair Display",serif;color:#8a2be2}.instructions{font-family:"Playfair Display",serif;font-size:20px;display:flex;justify-content:center}.table-header-container{background-color:#e6e6fa}#table-container{display:none}#table-header{font-size:40px;font-weight:bold;background-color:#db61db;text-align:center;border-radius:10px;opacity:.8;width:50%;margin-left:25vw}#table1{border:none;display:flex;justify-content:center}.table-row-1{font-weight:bold;font-size:40px}.table-row-1>td{background-color:#fff;color:#add8e6;border-radius:4px;border:2px solid #000}.table-row-1>:nth-child(2){color:blue}.table-row-1>:nth-child(3){color:red}.table-row-1>:last-child{color:#adff2f}.table-row-2{text-align:center}.table-row-2>td{background-color:#f08080}.take-aways{display:none;font-weight:bold;font-size:20px}.inferences{display:none}#inferences1{display:none}#inferences2{display:none}.about-me{margin-top:10%;display:flex;justify-content:space-evenly;background-color:#e6e6fa}
+/*!*************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
+  \*************************************************************************************************************************************/
+body {
+  background-color: lavender;
+  font-family: "Playfair Display", serif;
+}
 
-/*# sourceMappingURL=main.css.map*/
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100px;
+}
+
+button {
+  border: none;
+  background-color: lavender;
+}
+button > img {
+  border-radius: 20px;
+}
+
+table, tr, td {
+  border: 1px solid black;
+  background-color: lavender;
+}
+
+table {
+  display: none;
+}
+
+.logo {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  opacity: 1;
+  z-index: 2;
+}
+
+.modal-instructions {
+  font-size: 20px;
+}
+
+.disclaimer {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.year {
+  background-color: lavender;
+}
+
+#preselected-year {
+  background-color: lavender;
+}
+
+#ticker-search-bar {
+  border-radius: 100px;
+  border: none;
+}
+
+.ticker-search-button {
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+}
+
+.ticker-search-button:hover {
+  cursor: pointer;
+}
+
+#open-instructions {
+  cursor: pointer;
+  border-radius: 10px;
+  border: 1px solid black;
+  background-color: greenyellow;
+  color: gray;
+  font-weight: bold;
+}
+
+.graph-takeaways {
+  display: flex;
+}
+
+#myChart {
+  width: 50vw;
+  height: 80%;
+  background-color: lavender;
+}
+
+.stock-choices {
+  font-size: 25px;
+  font-family: "Playfair Display", serif;
+  display: flex;
+  justify-content: space-between;
+  background-color: lavender;
+}
+
+.app-name {
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  color: blueviolet;
+  font-weight: bold;
+}
+
+.instructions-modal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  padding-top: 20vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.modal-close-button {
+  right: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 25%;
+  width: 50%;
+  height: 40%;
+  text-align: center;
+  background-color: white;
+}
+
+.welcome {
+  font-size: 30px;
+  color: blue;
+  margin-left: 25%;
+}
+
+.disclaimer {
+  margin-top: 50px;
+}
+
+.table-header-container {
+  background-color: lavender;
+}
+
+#table-container {
+  display: none;
+}
+
+#table-header {
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #db61db;
+  text-align: center;
+  border-radius: 10px;
+  opacity: 0.8;
+  width: 50%;
+  margin-left: 15vw;
+}
+
+#table1 {
+  border: none;
+  display: flex;
+  justify-content: center;
+}
+
+.table-row-1 {
+  font-weight: bold;
+  font-size: 20px;
+}
+.table-row-1 > td {
+  background-color: white;
+  color: lightblue;
+  border-radius: 4px;
+  border: 2px solid black;
+}
+.table-row-1 > :nth-child(2) {
+  color: blue;
+}
+.table-row-1 > :nth-child(3) {
+  color: red;
+}
+.table-row-1 > :last-child {
+  color: greenyellow;
+}
+
+.table-row-2 {
+  text-align: center;
+}
+.table-row-2 > td {
+  background-color: lightcoral;
+}
+
+.take-aways {
+  display: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.inferences {
+  display: none;
+}
+
+#inferences1 {
+  display: none;
+}
+
+#inferences2 {
+  display: none;
+}
+
+.about-me {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: lavender;
+}

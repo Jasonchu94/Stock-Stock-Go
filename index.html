@@ -21,21 +21,32 @@
     <div id="fadeaway">
         <img class='logo'src="./assets/images/App_logo.png">
     </div>
+    
+    <div class="instructions-modal" id="instructions-modal">
+        <div class="modal-content">
+            <div class="modal-title">
+                <div class="welcome">
+                    Welcome to Stock Stock Go 
+                </div>
+                
+                <div class="modal-close-button" id="modal-close-button">x</div>
+            </div>
+            <div class="modal-instructions">
+                <div>
+                    Graph any stock and summarize relevant data
+                </div>
+                Select your date range
+                <br>
+                Click a stock icon or enter your own ticker and push the button to graph!  
+            </div>
+            <div class="disclaimer">
+                Disclaimer: the information provided here is not financial advice. 
+            </div>
+
+        </div>
+    </div>
     <div class="app-name">
         Stock Stock GO
-    </div>
-    <div class="instructions">
-        Welcome to Stock Stock Go, graph any stock and summarize relevant data
-
-        <div>
-            Select your date range
-            <br>
-            Click a stock icon or enter your own ticker and push the button to graph!          
-
-        </div>
-        <div class="disclaimer">
-            Disclaimer: the information provided here is not financial advice. 
-        </div>
     </div>
     <div class="stock-choices">
         Select a stock:
@@ -63,46 +74,54 @@
         </select>
         <input id='ticker-search-bar'type="text" placeholder="Enter ticker symbol">
         <button class='ticker-search-button' id="ticker-search-button" >Add stock to graph</button> 
+        <button id="open-instructions">Instructions</button>
     </div>
     
 
+    <div class="graph-takeaways">
+        <div class="graph">
+            <canvas id="myChart" width="700" height="700"></canvas>
+
+        </div>
+        <div class="stock-info">
+
+            <div class="table-header-container">
+                <div id="table-header"></div>
     
-    <canvas id="myChart" width="1600" height="700"></canvas>
-    <div class="table-header-container">
-        <div id="table-header"></div>
+            </div>
+            <div id="table-container">
+            <table id="table1">
+                <tr class="table-row-1">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="table-row-2">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+    
+            </div>
+    
+            <div class="take-aways" id="take-aways">
+                <ul id="take-away-list">
+                    <li id="takeaway-1"></li>
+                    <li id="takeaway-2"></li>
+                    <li id="takeaway-3"></li>
+                    <li id="takeaway-4"></li>
+                </ul>
+            </div>
+    
+            <div id='inferences'class="inferences"></div>
+            <div id="inferences1">a</div>
+            <div id="inferences2">b</div>
+        </div>
 
     </div>
-    <div id="table-container">
-        <table id="table1">
-            <tr class="table-row-1">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr class="table-row-2">
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-
-    </div>
-
-    <div class="take-aways" id="take-aways">
-        <ul id="take-away-list">
-            <li id="takeaway-1"></li>
-            <li id="takeaway-2"></li>
-            <li id="takeaway-3"></li>
-            <li id="takeaway-4"></li>
-        </ul>
-    </div>
-
-    <div id='inferences'class="inferences">
-    </div>
-    <div id="inferences1">a</div>
-    <div id="inferences2">b</div>
     <div class="about-me">
         <div class="github">
             <a target="_blank" href="https://github.com/Jasonchu94"><img src="./assets/images/Github_icon.png"></a>
