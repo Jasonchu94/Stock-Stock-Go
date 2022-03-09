@@ -7,7 +7,13 @@
 Select a time range with the drop down. Once selected, click any stock icon or enter a Ticker and press the button to graph closing prices for the stock of choice. 
 Scroll down to the table and takeaways to read summarized information about your stock.
 
-In Stock Stock Go users will be able to:
+# Technologies
+1. Chart.js
+2. Node.js
+3. IEX Cloud API
+4. SASS
+
+#  Stock Stock Go users will be able to:
 
 1. Choose preselected stock data to graph and gain insight on.
 2. Enter their own ticker symbol for live data.
@@ -40,7 +46,8 @@ fetch(`https://cloud.iexapis.com/v1/stock/market/batch?types=chart&symbols=${inp
                 )
 ```
 
-![Stock Insights]![StockStockGo](https://user-images.githubusercontent.com/88340645/157318879-35301242-755c-4337-8297-c64c36ef216b.png)
+# Stock Insights
+![StockStockGo](https://user-images.githubusercontent.com/88340645/157318879-35301242-755c-4337-8297-c64c36ef216b.png)
 
 
 Future improvments: 
