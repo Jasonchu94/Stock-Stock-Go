@@ -106,14 +106,13 @@ class StockApp{
             },
             options: {
 
+                maintainAspectRatio: false,
                 scales: {
                     y: {
                         beginAtZero: true
                     },
 
                 },
-                responsive: false,
-                maintainAspectRatio: true,
             }
             
         }

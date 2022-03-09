@@ -87,6 +87,11 @@ table {
   display: flex;
 }
 
+.graph {
+  height: 500px;
+  width: 50%;
+}
+
 #myChart {
   width: 50vw;
   height: 80%;
@@ -148,6 +153,7 @@ table {
   font-size: 30px;
   color: blue;
   margin-left: 25%;
+  text-decoration: underline;
 }
 
 .disclaimer {
