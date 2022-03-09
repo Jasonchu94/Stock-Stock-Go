@@ -1,6 +1,6 @@
 # Stock Stock Go
 
-Stock Stock Go is a data visiualization tool for real time stock closing prices. The app by no means is financial advise, but an easy accessible tool for users who are interested in taking their first step into the stock world. The app will use Chart.js, Node.JS, IEX cloud API, and SASS.
+<a href="https://jasonchu94.github.io/Stock-Stock-Go/" target="_blank" rel="noopener noreferrer">Stock Stock Go</a> is a data visiualization tool for real time stock closing prices. The app by no means is financial advise, but an easy accessible tool for users who are interested in taking their first step into the stock world. The app will use Chart.js, Node.JS, IEX cloud API, and SASS.
 
 # Instructions
 
