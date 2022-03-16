@@ -47,7 +47,7 @@ fetch(`https://cloud.iexapis.com/v1/stock/market/batch?types=chart&symbols=${inp
 ```
 
 # Stock Insights
-![StockStockGo](https://user-images.githubusercontent.com/88340645/157318879-35301242-755c-4337-8297-c64c36ef216b.png)
+![SSGImage](https://user-images.githubusercontent.com/88340645/158663158-5675cfa1-9472-4570-8fde-44e4f9debf86.png)
 
 
 Future improvments: 
